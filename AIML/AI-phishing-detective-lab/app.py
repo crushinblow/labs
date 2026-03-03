@@ -1,8 +1,11 @@
 import streamlit as st
 import joblib
+from pathlib import Path
 
-# Load trained model
-model = joblib.load("phishing_model.joblib")
+HERE = Path(__file__).parent
+MODEL_PATH = HERE / "phishing_model.joblib"
+
+model = joblib.load(MODEL_PATH)
 
 st.title("AI Phishing Email Detector")
 
